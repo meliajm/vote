@@ -12,6 +12,18 @@ class Api::V1::UsersController < ApplicationController
         render json: @user
     end
 
+    # POST /users
+    def create
+        @user = User.new(user_params)
+    
+        if @user.save
+          render json: @user, status: :created 
+              
+        else
+          render json: @user.errors, status: :unprocessable_entity
+        end
+    end
+
 
     # POST /users
     # def create
@@ -32,9 +44,8 @@ class Api::V1::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:firstname, :lastname, :phonenumber, :email, :receivesNotification)
+        params.require(:user).permit(:firstname, :lastname, :email, :phonenumber, :receivesNotification, :created_at)
     end
 
-
-
+    
 end
