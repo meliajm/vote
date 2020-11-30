@@ -24,15 +24,15 @@ class Api::V1::UsersController < ApplicationController
     end
 
     #???
-    def notifications
-        @users = User.receivesNotifications
-        render json: @users
-    end
+    # def notifications
+    #     @users = User.receivesNotifications
+    #     render json: @users
+    # end
 
     private
 
     def user_params
-        params.require(:user).permit(:firstname, :lastname, :phonenumber, :email, :receivesNotifications)
+        params.require(:user).permit(:firstname, :lastname, :phonenumber, :email, :receivesNotification)
     end
 
 
