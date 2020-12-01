@@ -44,7 +44,23 @@ class Api::V1::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:firstname, :lastname, :email, :phonenumber, :receivesNotification, :created_at)
+        params.require(:user).permit(:firstname, :lastname, :email, :phonenumber, :receivesNotification, :created_at, 
+        address1,
+        address2,
+        city,
+        zip,
+        state,
+        message,
+        canVolunteer)
+        
+        # address1,
+        # address2,
+        # city,
+        # zip,
+        # state,
+        # message,
+        # canVolunteer
+        # rails generate migration add_columns_to_users address1:string, address2:string, city:string, zip:string, state:string, message:text, canVolunteer:boolean
     end
 
     
