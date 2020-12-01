@@ -45,13 +45,13 @@ class Api::V1::UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:firstname, :lastname, :email, :phonenumber, :receivesNotification, :created_at, 
-        address1,
-        address2,
-        city,
-        zip,
-        state,
-        message,
-        canVolunteer)
+        :address1,
+        :address2,
+        :city,
+        :zip,
+        :state,
+        :message,
+        :canVolunteer)
         
         # address1,
         # address2,
