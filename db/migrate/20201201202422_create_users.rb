@@ -6,6 +6,13 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :phonenumber
       t.boolean :receivesNotification
+      t.string :address1
+      t.string :address2
+      t.string :city
+      t.integer :zip
+      t.string :state
+      t.text :message
+      t.boolean :canVolunteer
 
       t.timestamps
     end
